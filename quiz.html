@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Тест — ВетКлиника «Добрый Хвост»</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body class="body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="m.html" class="brand">🐾 Добрый Хвост</a>
+      <nav class="nav">
+        <a href="services.html">Услуги</a>
+        <a href="booking.html">Запись</a>
+        <a href="calculator.html">Калькулятор корма</a>
+        <a href="quiz.html">Тест</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container quiz-page">
+    <h1>Короткий тест: насколько вы хорошо знаете уход за питомцем?</h1>
+    <form id="quiz-form" class="form-card" onsubmit="return handleQuizSubmit(event)">
+      <ol class="quiz-list">
+        <li>
+          <p>Как часто взрослой собаке обычно необходима прогулка?</p>
+          <label><input type="radio" name="q1" value="a"> Один раз в день</label>
+          <label><input type="radio" name="q1" value="b"> Два и более раза в день</label>
+          <label><input type="radio" name="q1" value="c"> Никогда</label>
+        </li>
+        <li>
+          <p>Сколько раз в год рекомендуется проводить плановую вакцинацию кошек по базовому графику?</p>
+          <label><input type="radio" name="q2" value="a"> Каждый месяц</label>
+          <label><input type="radio" name="q2" value="b"> Один раз в год</label>
+          <label><input type="radio" name="q2" value="c"> Никогда</label>
+        </li>
+        <li>
+          <p>Что из перечисленного — признак обезвоживания у животного?</p>
+          <label><input type="radio" name="q3" value="a"> Яркое энергичное поведение</label>
+          <label><input type="radio" name="q3" value="b"> Сухие десны и уменьшение эластичности кожи</label>
+          <label><input type="radio" name="q3" value="c"> Аппетит</label>
+        </li>
+      </ol>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Проверить</button>
+        <button class="btn btn-secondary" type="button" onclick="resetQuiz()">Сбросить</button>
+      </div>
+    </form>
+
+    <section id="quiz-result" class="result-card" style="display:none;">
+      <h2>Ваш результат</h2>
+      <p id="quiz-text"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">© 2025 ВетКлиника «Добрый Хвост»</div>
+  </footer>
+</body>
+</html>

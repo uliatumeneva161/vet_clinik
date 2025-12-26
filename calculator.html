@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Калькулятор корма — ВетКлиника «Добрый Хвост»</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body class="body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="m.html" class="brand">🐾 Добрый Хвост</a>
+      <nav class="nav">
+        <a href="services.html">Услуги</a>
+        <a href="booking.html">Запись</a>
+        <a href="calculator.html">Калькулятор корма</a>
+        <a href="quiz.html">Тест</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container calculator-page">
+    <h1>Калькулятор дневной нормы корма</h1>
+    <p>Введите данные питомца — мы подсчитаем примерную дневную норму в граммах. Это общий ориентир; для точного плана питания обратитесь к ветеринару.</p>
+
+    <form id="calc-form" class="form-card" onsubmit="return calculateFood(event)">
+      <label>Вид
+        <select id="calc-species">
+          <option value="dog">Собака</option>
+          <option value="cat">Кошка</option>
+        </select>
+      </label>
+
+      <label>Вес (кг)
+        <input type="number" id="calc-weight" step="0.1" min="0.1" required placeholder="5.0">
+      </label>
+
+      <label>Возраст
+        <select id="calc-age">
+          <option value="adult">Взрослый</option>
+          <option value="puppy">Щенок/котёнок</option>
+          <option value="senior">Старше</option>
+        </select>
+      </label>
+
+      <label>Уровень активности
+        <select id="calc-activity">
+          <option value="low">Низкий</option>
+          <option value="medium">Средний</option>
+          <option value="high">Высокий</option>
+        </select>
+      </label>
+
+      <label>Калорийность корма (ккал/100г)
+        <input type="number" id="calc-kcal" value="350" required>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Рассчитать</button>
+        <button class="btn btn-secondary" type="button" onclick="resetCalc()">Сброс</button>
+      </div>
+    </form>
+
+    <section id="calc-result" class="result-card" style="display:none;">
+      <h2>Результат</h2>
+      <p id="calc-text"></p>
+    </section>
+
+    <section class="tips">
+      <h2>Советы по кормлению</h2>
+      <ul>
+        <li>Регулярно проверяйте вес питомца и корректируйте порцию.</li>
+        <li>Своевременные прививки и осмотры — залог здоровья и нормального аппетита.</li>
+        <li>При болезнях или смене корма — вводите новый корм постепенно.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">© 2025 ВетКлиника «Добрый Хвост»</div>
+  </footer>
+</body>
+</html>

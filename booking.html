@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Запись на приём — ВетКлиника «Добрый Хвост»</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body class="body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="m.html" class="brand">🐾 Добрый Хвост</a>
+      <nav class="nav">
+        <a href="services.html">Услуги</a>
+        <a href="booking.html">Запись</a>
+        <a href="calculator.html">Калькулятор корма</a>
+        <a href="quiz.html">Тест</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <h1>Онлайн-запись</h1>
+    <p>Заполните форму — мы подтвердим запись по телефону или email.</p>
+
+    <form id="booking-form" class="form-card" onsubmit="return handleBookingSubmit(event)">
+      <label>Имя владельца
+        <input type="text" id="ownerName" required placeholder="Иван Иванов">
+      </label>
+
+      <label>Контактный телефон
+        <input type="tel" id="phone" required placeholder="+7 900 000-00-00">
+      </label>
+
+      <label>Email
+        <input type="email" id="email" placeholder="you@example.com">
+      </label>
+
+      <label>Имя питомца
+        <input type="text" id="petName" required placeholder="Барсик">
+      </label>
+
+      <label>Вид
+        <select id="species">
+          <option value="dog">Собака</option>
+          <option value="cat">Кошка</option>
+          <option value="other">Другое</option>
+        </select>
+      </label>
+
+      <label>Услуга
+        <select id="service">
+          <option>Общий приём</option>
+          <option>Вакцинация</option>
+          <option>Хирургия</option>
+          <option>Диагностика</option>
+          <option>Консультация по кормлению</option>
+        </select>
+      </label>
+
+      <label>Дата и время
+        <input type="datetime-local" id="datetime" required>
+      </label>
+
+      <label>Комментарий
+        <textarea id="comment" placeholder="Особые пожелания или симптомы"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Отправить</button>
+        <button class="btn btn-secondary" type="button" onclick="clearBookings()">Очистить записи</button>
+      </div>
+    </form>
+
+    <section class="appointments">
+      <h2>Ваши записи</h2>
+      <div id="appointmentsList" class="appointments-list">
+        <!-- appointments go here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">© 2025 ВетКлиника «Добрый Хвост»</div>
+  </footer>
+</body>
+</html>
